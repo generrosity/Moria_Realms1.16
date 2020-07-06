@@ -16,8 +16,9 @@ execute if score nld.start nld.data matches 1 run scoreboard players set nld.max
 ### Shoud be clear lag be activated ###                                                              V
 execute if score nld.start nld.data matches 1 run scoreboard players set nld.clear_lag_on nld.config 1
 ### Time betwen lag clears (in seconds) ###                                                             V
-execute if score nld.start nld.data matches 1 run scoreboard players set nld.clear_lag_time nld.config 600
+execute if score nld.start nld.data matches 1 run scoreboard players set nld.clear_lag_time nld.config 3600
 
+###### generrosity - time between lags was 600 or 10 min, changed to 3600 or an hour
 
 
 ### Range in which mobs are switched off ###                                                   V
@@ -30,14 +31,16 @@ execute as @e[type=!#nld:ignore,tag=!nld.NoAI,tag=!global.ignore] at @s unless e
 
 
 ### Time after the items despawnen in ticks ###
-kill @e[tag=!global.ignore,type=item,scores={nld.age=3600..}]
+kill @e[tag=!global.ignore,type=item,scores={nld.age=6000..}]
 #                                                     A
 
+##### generrosity item despawn was 3600 (3min) to 6000  (5min standard)
 
 
 ### Number of entities from which the lag is increased (recoment max_entitys=200+(300*players)) ### V
-execute if score nld.start nld.data matches 1 run scoreboard players set nld.max_entitys nld.config 500
+execute if score nld.start nld.data matches 1 run scoreboard players set nld.max_entitys nld.config 1400
 
+##### generrosity - was 500 eeps changed to 1400
 
 #####################################
 ### Measures for too much entitys ###
